@@ -34,7 +34,7 @@ public class ClienteDaoH2Impl implements ClienteDao {
 
 	@Override
 	public void inserir(Cliente c) {
-		String sql = "INSERT INTO cliente (ID, NOME, ENDERECO, TELEFONE, CIDADE, UF) VALUES (?,?,?,?,?,?,?)";
+		String sql = "INSERT INTO cliente (NOME, ENDERECO, TELEFONE, CIDADE, UF) VALUES (?,?,?,?,?,?)";
 
 		try (PreparedStatement ps = getConnection().prepareStatement(sql)) {
 
