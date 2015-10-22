@@ -8,12 +8,18 @@ import java.awt.GridBagConstraints;
 import java.awt.Color;
 import javax.swing.JLabel;
 import java.awt.Insets;
+import java.awt.event.ActionListener;
 
 public abstract class MolduraAbstrata extends JPanel {
 	private static final long serialVersionUID = 1L;
+	private JButton btnFechar;
 
 	protected abstract void configuraMiolo();
-	
+
+	public void setCloseAction(ActionListener action) {
+		btnFechar.addActionListener(action);
+	}
+
 	/**
 	 * Create the panel.
 	 */
@@ -37,7 +43,7 @@ public abstract class MolduraAbstrata extends JPanel {
 		gbc_lblBemVindo.gridy = 0;
 		panel.add(lblBemVindo, gbc_lblBemVindo);
 
-		JButton btnFechar = new JButton("Fechar");
+		btnFechar = new JButton("Fechar");
 		GridBagConstraints gbc_btnFechar = new GridBagConstraints();
 		gbc_btnFechar.anchor = GridBagConstraints.EAST;
 		gbc_btnFechar.gridx = 1;
@@ -49,7 +55,7 @@ public abstract class MolduraAbstrata extends JPanel {
 		add(panel_1, BorderLayout.SOUTH);
 
 		configuraMiolo();
-		
+
 	}
 
 }

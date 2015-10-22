@@ -50,9 +50,7 @@ public class TelaPrincipal extends JFrame {
 		JMenuItem mntmCliente = new JMenuItem("Cliente");
 		mntmCliente.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				tabbedPane.addTab("Tela ", new TelaCadastroCliente() {
-					private static final long serialVersionUID = 1L;
-				});
+				abrirTela();
 			}
 		});
 		mnCadastro.add(mntmCliente);
@@ -65,4 +63,16 @@ public class TelaPrincipal extends JFrame {
 		contentPane.add(tabbedPane, BorderLayout.CENTER);
 	}
 
+	protected void abrirTela() {
+		TelaCadastroCliente telacadastrocliente = new TelaCadastroCliente();
+		// ActionListener action = new ActionListener() {
+		// @Override
+		// public void actionPerformed(ActionEvent e) {
+		// tabbedPane.remove(telacadastrocliente);
+		// }
+		// };
+		// telacadastrocliente.setCloseAction(action);
+		telacadastrocliente.setCloseAction(e -> tabbedPane.remove(telacadastrocliente));
+		tabbedPane.addTab("Tela, ", telacadastrocliente);
+	}
 }
