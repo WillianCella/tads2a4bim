@@ -9,14 +9,15 @@ import java.awt.Color;
 import javax.swing.JLabel;
 import java.awt.Insets;
 
-public abstract class AbstractPanel extends JPanel {
-
+public abstract class MolduraAbstrata extends JPanel {
 	private static final long serialVersionUID = 1L;
 
+	protected abstract void configuraMiolo();
+	
 	/**
 	 * Create the panel.
 	 */
-	public AbstractPanel() {
+	public MolduraAbstrata() {
 		setLayout(new BorderLayout(0, 0));
 
 		JPanel panel = new JPanel();
@@ -47,6 +48,8 @@ public abstract class AbstractPanel extends JPanel {
 		panel_1.setBackground(Color.WHITE);
 		add(panel_1, BorderLayout.SOUTH);
 
+		configuraMiolo();
+		
 	}
 
 }

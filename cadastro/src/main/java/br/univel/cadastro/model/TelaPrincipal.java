@@ -2,7 +2,6 @@ package br.univel.cadastro.model;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -51,7 +50,7 @@ public class TelaPrincipal extends JFrame {
 		JMenuItem mntmCliente = new JMenuItem("Cliente");
 		mntmCliente.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				tabbedPane.addTab("Tela ", new AbstractPanel() {
+				tabbedPane.addTab("Tela ", new TelaCadastroCliente() {
 					private static final long serialVersionUID = 1L;
 				});
 			}
